@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finalização de Compra</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    .payment-details {
+      margin-top: 30px;
+    }
+    
+    .payment-option {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .payment-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+    
+    .payment-label {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    
+    .payment-form {
+      margin-top: 20px;
+    }
+    
+    .payment-input {
+      margin-bottom: 10px;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    .payment-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .payment-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Finalização de Compra</h1>
+    
+    <div class="payment-details">
+      <div class="payment-option">
+        <img class="payment-icon" src="https://example.com/credit-card-icon.png" alt="Crédito">
+        <span class="payment-label">Crédito</span>
+      </div>
+      
+      <div class="payment-option">
+        <img class="payment-icon" src="https://example.com/debit-card-icon.png" alt="Débito">
+        <span class="payment-label">Débito</span>
+      </div>
+      
+      <div class="payment-option">
+        <img class="payment-icon" src="https://example.com/pix-icon.png" alt="PIX">
+        <span class="payment-label">PIX</span>
+      </div>
+    </div>
+    
+    <div class="payment-form">
+      <input type="text" class="payment-input" placeholder="Nome do Proprietário">
+      <input type="text" class="payment-input" placeholder="Número do Cartão">
+      <input type="text" class="payment-input" placeholder="CVV">
+      <input type="text" class="payment-input" placeholder="Validade">
+</div>
+
+<div class="payment-form">
+  <div id="credit-card-form">
+    <input type="text" class="payment-input" placeholder="Nome do Proprietário">
+    <input type="text" class="payment-input" placeholder="Número do Cartão">
+    <input type="text" class="payment-input" placeholder="CVV">
+    <input type="text" class="payment-input" placeholder="Validade">
+    <button class="payment-btn" onclick="confirmPayment('credit-card')">Confirmar Forma de Pagamento</button>
+  </div>
+  
+  <div id="debit-card-form" style="display: none;">
+    <input type="text" class="payment-input" placeholder="Nome do Proprietário">
+    <input type="text" class="payment-input" placeholder="Número do Cartão">
+    <input type="text" class="payment-input" placeholder="CVV">
+    <input type="text" class="payment-input" placeholder="Validade">
+    <button class="payment-btn" onclick="confirmPayment('debit-card')">Confirmar Forma de Pagamento</button>
+  </div>
+  
+  <div id="pix-form" style="display: none;">
+    <div class="payment-input">Chave PIX: 123456789</div>
+    <img src="https://example.com/qr_code.png" alt="QR Code" width="200" height="200">
+    <div class="payment-input">Aguardando Confirmação de Pedido</div>
+    <button class="payment-btn" onclick="confirmPayment('pix')">Confirmar Forma de Pagamento</button>
+  </div>
+</div>
+
+<a href="#">
+  <button class="payment-btn" onclick="finalizePurchase()">Finalizar Compra</button>
+</a>
+
+<script src="/Usuario/Script.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sushi San Experience</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/bootstrap-icons.min.css">
+  <style>
+    .custom-body {
+      font-family: Arial, sans-serif;
+      background-color: #F0F0F0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }  
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      padding: 20px;
+    }  
+    .custom-header {
+      background-color: #000;
+      color: #FFF;
+      padding: 20px;
+    }  
+    .top-bar.custom-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .custom-header h1 {
+      color: #FFF;
+    }  
+    main {
+      margin-top: 20px;
+    } 
+    section {
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .restaurant-list,
+    .food-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .restaurant-list img,
+    .food-list img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+    .custom-section {
+      text-align: center;
+    }
+    .restaurant-image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    .restaurant-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .delete-button,
+    .edit-button {
+      width: 20px;
+      height: 20px;
+      margin-left: 5px;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="p-3 text-bg-dark">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-secondary">Página Inicial</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-white" id="notifications-button">Notificações</a></li>
+          <li class="nav-item"><a href="/Parceiro/Chat.html" class="nav-link px-2 text-white">Chat com clientes</a></li>
+          <li class="nav-item"><a href="/Parceiro/Adicionar_pratos.html" class="nav-link px-2 text-white">Adicionar Pratos</a></li>
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+        </form>
+
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="custom-section">
+      <div class="container">
+        <img src="https://media-cdn.tripadvisor.com/media/photo-s/14/94/a1/60/logo.jpg" alt="Sushi San Experience"
+          class="restaurant-image">
+        <h2 class="restaurant-name">Sushi San Experience</h2>
+      </div>
+    </section>
+
+    <section class="custom-section">
+      <h2>Pratos</h2>
+      <div class="food-list">
+        <div class="food-item">
+          <img src="https://mundo-nipo.com/wp-content/uploads/2018/11/Tonkatsu-Foto-Sotockvault-900x550-30-01-20.jpg"
+            alt="Tonkatsu" width="200px">
+          <img src="https://cdn-icons-png.flaticon.com/512/18/18297.png" alt="Excluir" class="delete-button" onclick="deleteItem(this)">
+          <img src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt="Editar" class="edit-button" onclick="editItem(this)">
+        </div>
+        <div class="food-item">
+          <img src="https://garden.chefware.com.br/3/0/0/especial-salmao-hossomaki-por-uramaki.jpg"
+            alt="Combo Barca Salmão" width="200px">
+          <img src="https://cdn-icons-png.flaticon.com/512/18/18297.png" alt="Excluir" class="delete-button" onclick="deleteItem(this)">
+          <img src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt="Editar" class="edit-button" onclick="editItem(this)">
+        </div>
+        <div class="food-item">
+          <img src="https://chefjar.com/wp-content/uploads/2021/05/crunchy-roll-sushi-02.jpg"
+            alt="Sushi Especial Hot Filadélfia" width="100px">
+          <img src="https://cdn-icons-png.flaticon.com/512/18/18297.png" alt="Excluir" class="delete-button" onclick="deleteItem(this)">
+          <img src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt="Editar" class="edit-button" onclick="editItem(this)">
+        </div>
+      </div>
+    </section>
+
+    <section class="custom-section">
+      <h2>Bebidas</h2>
+      <div class="food-list">
+        <div class="food-item">
+          <img src="https://diageo.vtexassets.com/arquivos/ids/160970/730054_SAQUE-JUN-DAITI---670ml_1.png?v=638010140070830000"
+            alt="Saquê Jun Daiti 670ml" width="200px">
+          <img src="https://cdn-icons-png.flaticon.com/512/18/18297.png" alt="Excluir" class="delete-button" onclick="deleteItem(this)">
+          <img src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt="Editar" class="edit-button" onclick="editItem(this)">
+        </div>
+        <div class="food-item">
+          <img src="https://images.tcdn.com.br/img/img_prod/858764/refrigerante_coca_cola_lata_350ml_c_12_359_1_20201021152315.jpg"
+            alt="REFRIGERANTE COCA COLA LATA 350ML" width="200px">
+          <img src="https://cdn-icons-png.flaticon.com/512/18/18297.png" alt="Excluir" class="delete-button" onclick="deleteItem(this)">
+          <img src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt="Editar" class="edit-button" onclick="editItem(this)">
+        </div>
+        <div class="food-item">
+          <img src="https://www.imigrantesbebidas.com.br/img/bebida/images/products/full/7633-vinho-pergola-tinto-suave-1l.jpg?s=f239f49786cfa28719fabc5cf66fac8b"
+            alt="Vinho Pérgola Tinto Suave 1L" width="100px">
+          <img src="https://cdn-icons-png.flaticon.com/512/18/18297.png" alt="Excluir" class="delete-button" onclick="deleteItem(this)">
+          <img src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt="Editar" class="edit-button" onclick="editItem(this)">
+        </div>
+      </div>
+    </section>
+
+    <section class="custom-section">
+      <h2>Combos</h2>
+      <div class="food-list">
+        <div class="food-item">
+          <img src="https://uploads.metropoles.com/wp-content/uploads/2019/11/08165030/Abre-Mat%C3%A9ria-Barcas-Unsplash.jpg"
+            alt="Barca de Sushi" width="200px">
+          <img src="https://cdn-icons-png.flaticon.com/512/18/18297.png" alt="Excluir" class="delete-button" onclick="deleteItem(this)">
+          <img src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt="Editar" class="edit-button" onclick="editItem(this)">
+        </div>
+        <div class="food-item">
+          <img src="https://www.radiowolf.com.br/2017/wp-content/uploads/2020/06/saizen.png" alt="Salmão" width="200px">
+          <img src="https://cdn-icons-png.flaticon.com/512/18/18297.png" alt="Excluir" class="delete-button" onclick="deleteItem(this)">
+          <img src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt="Editar" class="edit-button" onclick="editItem(this)">
+        </div>
+      </div>
+    </section>
+
+    <section class="custom-section">
+      <h2>Promoções</h2>
+      <div class="food-list">
+        <div class="food-item">
+          <img src="https://img.cybercook.com.br/receitas/559/pizza-de-presunto-e-mussarela-2.jpeg" alt="Pizza" width="200px">
+          <img src="https://cdn-icons-png.flaticon.com/512/18/18297.png" alt="Excluir" class="delete-button" onclick="deleteItem(this)">
+          <img src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt="Editar" class="edit-button" onclick="editItem(this)">
+        </div>
+        <div class="food-item">
+          <img src="https://images6.websiteseguro.com/fotos/156-jack-melted-cheddar/04-jack-melted-cheddar.jpg" alt="Hamburguer"
+            width="200px">
+          <img src="https://cdn-icons-png.flaticon.com/512/18/18297.png" alt="Excluir" class="delete-button" onclick="deleteItem(this)">
+          <img src="https://cdn-icons-png.flaticon.com/512/1159/1159633.png" alt="Editar" class="edit-button" onclick="editItem(this)">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function deleteItem(button) {
+      const foodItem = button.parentElement;
+      foodItem.remove();
+    }
+    
+    function editItem(button) {
+      const foodItem = button.parentElement;
+    }
+  </script>
+</body>
+
+</html>

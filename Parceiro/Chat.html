@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat do Restaurante</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .chat-tabs {
+            display: flex;
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .chat-tab {
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            flex: 1;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        
+        .chat-tab.active {
+            background-color: #ccc;
+        }
+        
+        .chat-window {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        
+        .chat-bubble {
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            max-width: 70%;
+        }
+        
+        .user-message {
+            background-color: #f0f0f0;
+            color: #333;
+            align-self: flex-start;
+        }
+        
+        .restaurant-message {
+            background-color: #cde6c7;
+            color: #333;
+            align-self: flex-end;
+        }
+        
+        .input-container {
+            display: flex;
+            background-color: #f0f0f0;
+            border-top: 1px solid #ccc;
+            padding: 10px;
+        }
+        
+        .input-container input {
+            flex: 1;
+            border: none;
+            padding: 5px;
+        }
+        
+        .input-container button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-tabs">
+            <div class="chat-tab active" onclick="changeChat(0)">Larissa - Temaki</div>
+            <div class="chat-tab" onclick="changeChat(1)">Roberto - Barca de Sushi</div>
+        </div>
+        <div class="chat-window" id="chatWindow">
+            <div id="chat0" class="chat">
+                <div class="restaurant-message chat-bubble">Olá Larissa, em que posso ajudar?</div>
+                <div class="user-message chat-bubble">Gostaria de fazer um adendo sobre meu temaki.</div>
+                <div class="restaurant-message chat-bubble">Claro, qual seria o adendo?</div>
+                <div class="user-message chat-bubble">Eu gostaria um complemento de Cream Chese, pode adicionar e eu pago tudo no crédito quanto chegar o motoboy?</div>
+                <div class="restaurant-message chat-bubble">Claro! Já adicionei aqui no seu pedido, o adicional é R$5,00 então ficou R$30,00 no total do seu pedido</div>
+            </div>
+            <div id="chat1" class="chat" style="display: none;">
+                <div class="restaurant-message chat-bubble">Olá, como posso ajudar?</div>
+                <div class="user-message chat-bubble">Eu gostaria de saber em quanto tempo posso receber minha Barca de Sushi</div>
+                <div class="restaurant-message chat-bubble">Olá Roberto! Seu pedido está quase pronto.</div>
+                <div class="user-message chat-bubble">Ok.</div>
+                <div class="restaurant-message chat-bubble">Então, meu nobre cliente, o motoboy acabou de sair com seu pedido</div>
+                <div class="user-message chat-bubble">Ótimo! Vai demorar quanto tempo mais ou menos para chegar?</div>
+                <div class="restaurant-message chat-bubble">Cerca de 5 minutos, ele está a 100km/h dando grau, já já ele chega</div>
+            </div>
+        </div>
+        <div class="input-container">
+            <input type="text" id="messageInput" placeholder="Digite sua mensagem">
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+
+    <script>
+        function changeChat(chatIndex) {
+            // Mostra o chat selecionado e esconde os demais
+            var chats = document.getElementsByClassName("chat");
+            var tabs = document.getElementsByClassName("chat-tab");
+            
+            for (var i = 0; i < chats.length; i++) {
+                if (i === chatIndex) {
+                    chats[i].style.display = "block";
+                    tabs[i].classList.add("active");
+                } else {
+                    chats[i].style.display = "none";
+                    tabs[i].classList.remove("active");
+                }
+            }
+        }
+
+        function sendMessage() {
+            var input = document.getElementById("messageInput");
+            var message = input.value.trim();
+            
+            if (message !== "") {
+                var activeChat = document.querySelector(".chat.active");
+                var isRestaurantMessage = activeChat.lastElementChild.classList.contains("restaurant-message");
+                var messageClass = isRestaurantMessage ? "user-message" : "restaurant-message";
+                var chatBubble = document.createElement("div");
+                chatBubble.classList.add(messageClass, "chat-bubble");
+                chatBubble.textContent = message;
+                activeChat.appendChild(chatBubble);
+                
+                input.value = "";
+                input.focus();
+            }
+        }
+    </script>
+</body>
+</html>

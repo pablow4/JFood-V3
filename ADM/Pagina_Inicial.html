@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>J-Food - O melhor e-commerce de comida japonesa</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    .custom-body {
+      font-family: Arial, sans-serif;
+      background-color: #F0F0F0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }  
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      padding: 20px;
+    }  
+    .custom-header {
+      background-color: #000;
+      color: #FFF;
+      padding: 20px;
+    }  
+    .top-bar.custom-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .custom-header h1 {
+      color: #FFF;
+    }  
+    main {
+      margin-top: 20px;
+    } 
+    section {
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .restaurant-list,
+    .food-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .restaurant-list img,
+    .food-list img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+    .custom-section {
+  text-align: center;
+}
+  </style>  
+</head>
+<body>
+<header class="p-3 text-bg-dark">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="#" class="nav-link px-2 text-secondary">Página Incial</a></li>
+          <li><a href="/ADM/Gerenciar.html" class="nav-link px-2 text-white">Gerenciar</a></li>
+          <li><a href="/ADM/Perfil.html" class="nav-link px-2 text-white">perfil</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+            <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+        </form>
+        </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="custom-section">
+      <h2>Restaurantes mais Populares</h2>
+      <div class="restaurant-list">
+        <a href="/Usuario/Selecao_de_Pratos_VASTO.html">
+          <img src="https://media-cdn.tripadvisor.com/media/photo-s/24/85/6e/db/vasto-108-sul.jpg" alt="Restaurante 1" width="140px">
+        </a>
+        <a href="/Usuario/Selecao_de_Pratos.html">
+          <img src="https://media-cdn.tripadvisor.com/media/photo-s/14/94/a1/60/logo.jpg" alt="Restaurante 2" width="200px" height="140px">
+        </a>
+        <a href="/Usuario/Selecao_de_Pratos_NAZO.html">
+          <img src="https://media-cdn.tripadvisor.com/media/photo-s/1e/38/61/ea/logo.jpg" alt="Restaurante 3" width="138px">
+        </a>
+      </div>
+    </section>
+
+    <section class="custom-section">
+      <h2>Pratos Populares</h2>
+      <div class="food-list">
+        <img src="https://mundo-nipo.com/wp-content/uploads/2018/11/Tonkatsu-Foto-Sotockvault-900x550-30-01-20.jpg" alt="Comida 1" width="200px">
+        <img src="https://garden.chefware.com.br/3/0/0/especial-salmao-hossomaki-por-uramaki.jpg" alt="Comida 2" width="200px">
+        <img src="https://chefjar.com/wp-content/uploads/2021/05/crunchy-roll-sushi-02.jpg" alt="Comida 3" width="100px">
+      </div>
+      <div class="container">
+        <footer class="py-3 my-4">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="/Parceiro/Pagina_inicial.html" class="nav-link px-2 text-body-secondary">Página Incial</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+          </ul>
+          <p class="text-center text-body-secondary">© 2023 Company, Inc</p>
+        </footer>
+      </div>
+    </section>    
+  </main>
+</body>
+</html>

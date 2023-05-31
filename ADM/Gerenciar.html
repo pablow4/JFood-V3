@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .tab.active {
+      background-color: #555;
+    }
+
+    .partner-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .partner {
+      position: relative;
+      width: 200px;
+      margin: 10px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .partner img {
+      width: 100%;
+      height: auto;
+    }
+
+    .partner-name {
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .partner-options {
+      position: absolute;
+      top: 0;
+      right: 0;
+      visibility: hidden;
+    }
+
+    .menu-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      z-index: 1;
+    }
+
+    .menu-icon:focus {
+      outline: none;
+    }
+
+    .menu-icon span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      margin-bottom: 4px;
+      background-color: #fff;
+    }
+
+    .partner-options.visible {
+      visibility: visible;
+      background-color: rgba(85, 16, 16, 0.9);
+      padding: 10px;
+      z-index: 2;
+    }
+
+    .options ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .options ul li {
+      color: #fff;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .options ul li:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gerenciamento de Restaurantes e Pratos</h1>
+
+  <div class="tabs">
+    <div class="tab active" id="restaurantes-tab">Restaurantes</div>
+    <div class="tab" id="pratos-tab">Pratos</div>
+  </div>
+
+  <div class="partner-container" id="partner-container">
+    <div class="partner">
+      <img src="https://media-cdn.tripadvisor.com/media/photo-s/24/85/6e/db/vasto-108-sul.jpg" alt="VASTO Restaurante">
+      <div class="partner-name">VASTO Restaurante</div>
+      <button class="menu-icon" aria-label="Opções">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="partner-options">
+        <div class="options">
+          <ul>
+            <li class="delete">Excluir Perfil</li>
+            <li class="notify">Enviar Notificação</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="partner">
+      <img src="https://media-cdn.tripadvisor.com/media/photo-s/14/94/a1/60/logo.jpg" alt="Sushi San Experience">
+      <div class="partner-name">Sushi San Experience</div>
+      <button class="menu-icon" aria-label="Opções">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="partner-options">
+        <div class="options">
+          <ul>
+            <li class="delete">Excluir Perfil</li>
+            <li class="notify">Enviar Notificação</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="partner">
+      <img src="https://media-cdn.tripadvisor.com/media/photo-s/1e/38/61/ea/logo.jpg" alt="NAZO Japanese Food">
+      <div class="partner-name">NAZO Japanese Food</div>
+      <button class="menu-icon" aria-label="Opções">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="partner-options">
+        <div class="options">
+          <ul>
+            <li class="delete">Excluir Perfil</li>
+            <li class="notify">Enviar Notificação</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="prato-container" id="prato-container" style="display: none;">
+    <div class="partner">
+      <img src="https://mundo-nipo.com/wp-content/uploads/2018/11/Tonkatsu-Foto-Sotockvault-900x550-30-01-20.jpg" alt="Tonkatsu">
+      <div class="partner-name">Tonkatsu - VASTO</div>
+    </div>
+
+    <div class="partner">
+      <img src="https://garden.chefware.com.br/3/0/0/especial-salmao-hossomaki-por-uramaki.jpg" alt="Combo Barca Salmão">
+      <div class="partner-name">Combo Barca Salmão - VASTO</div>
+    </div>
+
+    <div class="partner">
+      <img src="https://chefjar.com/wp-content/uploads/2021/05/crunchy-roll-sushi-02.jpg" alt="Crunchy Roll Sushi">
+      <div class="partner-name">Crunchy Roll Sushi - VASTO</div>
+    </div>
+  </div>
+
+  <script>
+    const restaurantesTab = document.getElementById('restaurantes-tab');
+    const pratosTab = document.getElementById('pratos-tab');
+    const partnerContainer = document.getElementById('partner-container');
+    const pratoContainer = document.getElementById('prato-container');
+
+    restaurantesTab.addEventListener('click', () => {
+      restaurantesTab.classList.add('active');
+      pratosTab.classList.remove('active');
+      partnerContainer.style.display = 'flex';
+      pratoContainer.style.display = 'none';
+    });
+
+    pratosTab.addEventListener('click', () => {
+      pratosTab.classList.add('active');
+      restaurantesTab.classList.remove('active');
+      partnerContainer.style.display = 'none';
+      pratoContainer.style.display = 'flex';
+    });
+
+    const menuIcons = document.querySelectorAll('.menu-icon');
+    menuIcons.forEach((icon) => {
+      icon.addEventListener('click', () => {
+        const partnerOptions = icon.nextElementSibling;
+        partnerOptions.classList.toggle('visible');
+      });
+    });
+  </script>
+</body>
+</html>
